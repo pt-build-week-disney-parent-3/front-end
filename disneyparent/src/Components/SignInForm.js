@@ -1,10 +1,13 @@
 import React from 'react';
 import {withFormik,Form,Field,} from 'formik';
-import { Button,  FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button,  FormGroup, Container,Row ,Col} from 'reactstrap';
 
 const SignInForm=(props)=>{
     console.log('props.values from sign in form',props.values)
     return (
+        <Container>
+            <Row >
+                <Col xs='3' className='mx-auto'>
         <Form>
     <FormGroup>
             <label>
@@ -33,6 +36,9 @@ const SignInForm=(props)=>{
         </FormGroup>
       <Button color="info" type ='submit'>Submit</Button>
     </Form>
+    </Col>
+    </Row>
+    </Container>
        
     )
 }
