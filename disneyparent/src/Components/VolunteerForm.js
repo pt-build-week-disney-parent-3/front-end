@@ -4,7 +4,7 @@ import { Button,  FormGroup, Container,Row ,Col} from 'reactstrap';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
-const SignUpForm =(props)=>{
+const VolunteerForm =(props)=>{
     const Content = styled.div`
     border: 1px solid #000;
     background-image: url(https://images.unsplash.com/photo-1556950961-8c092986258e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);
@@ -70,4 +70,4 @@ export default withFormik({
     }),
   
   
-  }) (SignUpForm);
+  }) (VolunteerForm);
