@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
 const VolunteerForm =(props)=>{
-    const Content = styled.div`
+    const VolunteerContent = styled.div`
     border: 1px solid #000;
-    background-image: url(https://images.unsplash.com/photo-1556950961-8c092986258e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);
+    background-image: url(https://images.unsplash.com/photo-1542839764-7cbd13228589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);
     width: 67em;
     height: 67em;
     overflow: hidden;
@@ -17,7 +17,7 @@ const VolunteerForm =(props)=>{
 `;
     console.log('props.values from sign in form',props.values)
     return (
-        <Content>
+        <VolunteerContent>
         <Container >
             <Row >
                 <Col xs='3' className='mx-auto'  style={{ marginTop:'40em',backgroundColor: '#333', borderColor: '#333' ,color:'white'}} >
@@ -47,15 +47,15 @@ const VolunteerForm =(props)=>{
                     <Field type='checkbox' name = 'termsOfService' />
             </label>
         </FormGroup>
-        <NavLink to='/SignIn'>
-        <Button color="info"  style={{ marginBottom:'2em',marginRight:'2em',color:'white'}}>Sign In</Button>
+        <NavLink to='/Parents'>
+        <Button color="info"  style={{ marginBottom:'2em',marginRight:'2em',color:'white'}}>Parents</Button>
         </NavLink>
         <Button color="info" type ='submit' style={{ marginBottom:'2em',color:'white'}}>Submit</Button>
     </Form>
     </Col>
     </Row>
     </Container>
-    </Content>
+    </VolunteerContent>
        
     )
 }
