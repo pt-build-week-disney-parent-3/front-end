@@ -4,7 +4,7 @@ import { Button,  FormGroup, Container,Row ,Col} from 'reactstrap';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
-const SignInForm=(props)=>{
+const SignUpForm =(props)=>{
     const Content = styled.div`
     border: 1px solid #000;
     background-image: url(https://images.unsplash.com/photo-1556950961-8c092986258e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);
@@ -47,8 +47,8 @@ const SignInForm=(props)=>{
                     <Field type='checkbox' name = 'termsOfService' />
             </label>
         </FormGroup>
-        <NavLink to='/Volunteer'>
-        <Button color="info"  style={{ marginBottom:'2em',marginRight:'2em',color:'white'}}>Volunteer</Button>
+        <NavLink to='/SignIn'>
+        <Button color="info"  style={{ marginBottom:'2em',marginRight:'2em',color:'white'}}>Sign In</Button>
         </NavLink>
         <Button color="info" type ='submit' style={{ marginBottom:'2em',color:'white'}}>Submit</Button>
     </Form>
@@ -70,4 +70,4 @@ export default withFormik({
     }),
   
   
-  }) (SignInForm);
+  }) (SignUpForm);

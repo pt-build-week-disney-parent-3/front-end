@@ -1,13 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import SignInForm from './Components/SignInForm';
+import SignUpForm from './Components/SignUpForm';
+
+import {Route}from "react-router-dom";
+
 
 function App() {
   return (
     <div>
-      <SignInForm/>
+      
+      <Route path = "/SignIn"  render={(routeParams)=>{return <SignInForm {...routeParams}  />}}/>
+      <Route path = "/Volunteer"  render={(routeParams)=>{return <SignUpForm {...routeParams}  />}}/>
     </div>
   );
 }
