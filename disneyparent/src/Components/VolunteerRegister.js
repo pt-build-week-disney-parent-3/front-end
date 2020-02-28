@@ -1,7 +1,5 @@
-VolunteerRegisterForm.js
-
 import React, {useState} from 'react';
-import {axiosWithAuth} from "../../auth/axiosWithAuth";
+import {axiosWithAuth} from "../auth/axiosWithAuth";
 import { withRouter } from 'react-router-dom';
 
 function VolunteerRegisterForm(props) {
@@ -109,22 +107,22 @@ function VolunteerRegisterForm(props) {
           <div>
                 <label>CPR Certified</label>
                 <div>
-                <RadioSpan>
+                <div>
                     <input  
                     name="CPR_Certified"
                     type="radio"
                     value=""
                     />
                     Yes
-                </RadioSpan>
-                <RadioSpan>
+                </div>
+                <div>
                     <input
                     name="CPR_Certified"
                     type="radio"
                     value="no"
                     />
                     No
-                </RadioSpan>
+                </div>
                 </div>
             </div>
         <div>

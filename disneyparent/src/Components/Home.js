@@ -1,16 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+
 const  Home = () => {
   return (
     <div className = 'parent div'>
       <div classname = 'users'>
           <div className = 'title'>Are you a Parent or Volunteer?</div>
 
-          <Link to="/parent-Register-form">
+          <Link to="/Parent-Register">
             <p>Parent</p>
           </Link> 
-          <Link to="/volunteer-Register-form">
+          <Link to="/Volunteer-Register">
             <p>Volunteer</p>
           </Link>
       </div>

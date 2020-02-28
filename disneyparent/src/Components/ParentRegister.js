@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {axiosWithAuth} from "../../auth/axiosWithAuth";
+import {axiosWithAuth} from "../auth/axiosWithAuth";
 import { withRouter } from 'react-router-dom';
 
 function ParentRegisterForm(props) {
