@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 
 import SignInForm from './Components/SignInForm';
-import SignUpForm from './Components/SignUpForm';
+
+import VolunteerForm from './Components/VolunteerForm';
 import Home from './Components/Home';
 
 
