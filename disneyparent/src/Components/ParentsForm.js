@@ -24,6 +24,7 @@ const ParentsForm=(props)=>{
         <Form>
     <FormGroup>
             <label>
+                Parents Sign In <br/>
                 Name:
                 <Field type='text' name='name' placeholder='Name'/>
             </label>
@@ -48,7 +49,10 @@ const ParentsForm=(props)=>{
             </label>
         </FormGroup>
         <NavLink to='/Volunteer'>
-        <Button color="info"  style={{ marginBottom:'2em',marginRight:'2em',color:'white'}}>Volunteer</Button>
+        <Button color="info"  style={{ marginBottom:'2em',marginRight:'.5em',color:'white'}}>Volunteer</Button>
+        </NavLink>
+        <NavLink to='/'>
+        <Button color="info"  style={{ marginBottom:'2em',marginRight:'.5em',color:'white'}}>home</Button>
         </NavLink>
         <Button color="info" type ='submit' style={{ marginBottom:'2em',color:'white'}}>Submit</Button>
     </Form>

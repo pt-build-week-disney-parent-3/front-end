@@ -24,6 +24,7 @@ const VolunteerForm =(props)=>{
         <Form>
     <FormGroup>
             <label>
+            Volunteers Sign In <br/>
                 Name:
                 <Field type='text' name='name' placeholder='Name'/>
             </label>
@@ -48,7 +49,10 @@ const VolunteerForm =(props)=>{
             </label>
         </FormGroup>
         <NavLink to='/Parents'>
-        <Button color="info"  style={{ marginBottom:'2em',marginRight:'2em',color:'white'}}>Parents</Button>
+        <Button color="info"  style={{ marginBottom:'2em',marginRight:'.5em',color:'white'}}>Parents</Button>
+        </NavLink>
+        <NavLink to='/'>
+        <Button color="info"  style={{ marginBottom:'2em',marginRight:'.5em',color:'white'}}>home</Button>
         </NavLink>
         <Button color="info" type ='submit' style={{ marginBottom:'2em',color:'white'}}>Submit</Button>
     </Form>
