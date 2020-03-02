@@ -16,7 +16,7 @@ const  Home = () => {
           </Link>
       </div>
       <div className = 'registered'>Already have an Account?</div>
-      <Link to="/login">
+      <Link to="/Signin">
         <p>Login</p>
       </Link>
     </div>
