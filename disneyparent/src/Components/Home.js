@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 const  Home = () => {
@@ -8,17 +8,22 @@ const  Home = () => {
       <div className = 'users'>
           <div className = 'title'> Are you a Parent or Volunteer?</div>
 
-          <Link to="/Parent-Register">
+          <NavLink to="/Search">
+            <p>Search</p>
+          </NavLink>
+          <NavLink to="/Parent-Register">
             <p>Parent</p>
-          </Link> 
-          <Link to="/Volunteer-Register">
+          </NavLink> 
+          <NavLink to="/Volunteer-Register">
             <p>Volunteer</p>
-          </Link>
+          </NavLink>
       </div>
       <div className = 'registered'>Already have an Account?</div>
-      <Link to="/Signin">
+
+      <NavLink to='/Parents'>
+
         <p>Login</p>
-      </Link>
+      </NavLink>
     </div>
   );
 }
