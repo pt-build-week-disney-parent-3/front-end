@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 
+
 import SignInForm from './Components/SignInForm';
 
 import VolunteerForm from './Components/VolunteerForm';
@@ -19,7 +20,7 @@ function App() {
       <Route path = '/Parent-Register' component = {ParentRegisterForm} />
       <Route path = '/Volunteer-Register' component = {VolunteerRegisterForm} />
       <Route path = "/SignIn"  render={(routeParams)=>{return <SignInForm {...routeParams}  />}}/>
-      <Route path = "/Volunteer"  render={(routeParams)=>{return <SignUpForm {...routeParams}  />}}/>
+      <Route path = "/Volunteer"  render={(routeParams)=>{return <VolunteerForm {...routeParams}  />}}/>
     </div>
   );
 }
