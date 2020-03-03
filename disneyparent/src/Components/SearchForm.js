@@ -7,14 +7,15 @@ import {NavLink} from 'react-router-dom';
 const SearchForm = ()=>{
     return (
         <div>
-        <NavLink to="/">
-        <p>Home</p>
+        <NavLink  to="/">
+        <p style={{marginLeft:'2em',marginTop:'1em' }} >Home</p>
       </NavLink>
       
         <Form>
             <FormGroup>
-        <Label for="Search">Search</Label>
+        <Label  style={{marginLeft:'2em' }} for="Search">Search</Label>
         <Input
+        style={{marginLeft:'2em' ,width:'60em'}}
           type="search"
           name="search"
           id="exampleSearch"
