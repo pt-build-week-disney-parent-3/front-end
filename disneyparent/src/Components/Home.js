@@ -8,6 +8,9 @@ const  Home = () => {
       <div classname = 'users'>
           <div className = 'title'>Are you a Parent or Volunteer?</div>
 
+          <NavLink to="/Search">
+            <p>Search</p>
+          </NavLink>
           <NavLink to="/Parent-Register">
             <p>Parent</p>
           </NavLink> 

@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 
 import ParentsForm from './Components/ParentsForm';
-
 import VolunteerForm from './Components/VolunteerForm';
 import Home from './Components/Home';
+import SearchForm from './Components/SearchForm';
 
 
 import {Route}from "react-router-dom";
@@ -15,7 +15,9 @@ import VolunteerRegisterForm from './Components/VolunteerRegister';
 function App() {
   return (
     <div>
+  
       <Route exact path = '/' component = {Home} />
+      <Route path = "/Search"  render={(routeParams)=>{return <SearchForm {...routeParams}  />}}/>
       <Route path = '/Parent-Register' component = {ParentRegisterForm} />
       <Route path = '/Volunteer-Register' component = {VolunteerRegisterForm} />
       <Route path = "/Parents"  render={(routeParams)=>{return <ParentsForm {...routeParams}  />}}/>
