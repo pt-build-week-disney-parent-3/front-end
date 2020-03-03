@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {axiosWithAuth} from "../auth/axiosWithAuth";
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import ImageSrc from '../images/disneycastle1.png';
 
 
     // @import url('https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap')
@@ -17,7 +18,7 @@ display: flex;
 flex-direction: row;
 align-content: center;
 justify-content: spaced-evenly;
-height: 100%;
+height: auto;
 font-family: 'Gentium Basic';
 `
 
@@ -69,6 +70,9 @@ font-weight:bold;
 padding:6px 24px;
 text-decoration:none;
 text-shadow:0px -1px 0px #5b6178;
+width: 100px;
+margin-left: 40%;
+
 
 &:hover {
     background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
@@ -83,8 +87,12 @@ text-shadow:0px -1px 0px #5b6178;
 `
 
 const WelcomeContainer = styled.div`
+display: flex;
+flex-direction: column;
+height: auto;
 text-align: center;
 background-color: #EEEEEE;
+background-image: url('../images/disneycastle1.png');
 
 `
 
@@ -176,6 +184,7 @@ function ParentRegisterForm(props) {
             <h1>Welcome Back!</h1>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
             <SignIn href="/Signin">Sign In</SignIn>
+            <img src= {ImageSrc} alt='disney castle' />
         </WelcomeContainer>
 
     </Container>

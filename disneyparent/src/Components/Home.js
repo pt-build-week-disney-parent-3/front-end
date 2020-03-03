@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 const  Home = () => {
   return (
     <div className = 'parent div'>
-      <div classname = 'users'>
-          <div className = 'title'>Are you a Parent or Volunteer?</div>
+      <div className = 'users'>
+          <div className = 'title'> Are you a Parent or Volunteer?</div>
 
           <Link to="/Parent-Register">
             <p>Parent</p>
