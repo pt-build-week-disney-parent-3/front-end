@@ -18,8 +18,8 @@ const SearchForm = ()=>{
         style={{marginLeft:'2em' ,width:'60em'}}
           type="search"
           name="search"
-          id="exampleSearch"
-          placeholder="search Questions"
+          
+          placeholder="Questions"
         />
          <Button color="info" type ='submit' style={{ marginLeft:'55em',marginTop:'1em',color:'white'}}>Search</Button>
       </FormGroup>
