@@ -1,10 +1,11 @@
 import React from 'react';
 import {withFormik,Form,Field,} from 'formik';
-import { Button,  FormGroup, Label,Input ,Col} from 'reactstrap';
+import { Button,  FormGroup, Label} from 'reactstrap';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
-const SearchForm = ()=>{
+const SearchForm = (props)=>{
+    console.log('props from searchfrom.js',props.values)
     return (
         <div>
         <NavLink  to="/">
@@ -13,8 +14,8 @@ const SearchForm = ()=>{
       
         <Form>
             <FormGroup>
-        <Label  style={{marginLeft:'2em' }} for="Search">Search</Label>
-        <Input
+        <Label  style={{marginLeft:'2em' }} for="Search">Search:</Label>
+        <Field
         style={{marginLeft:'2em' ,width:'60em'}}
           type="search"
           name="search"
