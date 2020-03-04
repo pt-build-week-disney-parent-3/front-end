@@ -116,7 +116,7 @@ function ParentRegisterForm(props) {
    
      const parentRegister = e => {
         e.preventDefault();
-        axiosWithAuth().post('api/auth/register/parent', {...credentials, type: "parent"})
+        axiosWithAuth().post('/auth/register/parent', {...credentials, type: "parent"})
                 .then(res => {
                     console.log(res.data)
 
