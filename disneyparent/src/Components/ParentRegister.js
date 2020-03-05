@@ -183,7 +183,7 @@ function ParentRegisterForm(props) {
         <WelcomeContainer>
             <h1>Welcome Back!</h1>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/Signin">Sign In</SignIn>
+            <SignIn href="/Parents">Sign In</SignIn>
             <img src= {ImageSrc} alt='disney castle' />
         </WelcomeContainer>
 

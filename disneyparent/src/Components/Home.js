@@ -6,7 +6,7 @@ const  Home = () => {
   return (
     <div className = 'parent div'>
       <div className = 'users'>
-          <div className = 'title'>Are you a Parent or Volunteer?</div>
+        <div className = 'title'>Are you a Parent or Volunteer?</div>
 
           <NavLink to="/Search">
             <p>Search</p>
