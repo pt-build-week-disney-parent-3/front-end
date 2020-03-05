@@ -239,7 +239,7 @@ function ParentRegisterForm(props) {
         <WelcomeContainer className = 'welcome'>
             <WelcomeTitle >Welcome Back!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/Signin">Sign In</SignIn>
+            <SignIn href="/Parents">Sign In</SignIn>
             
         </WelcomeContainer>
         
