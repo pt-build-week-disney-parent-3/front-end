@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 
 const PublicRoute = ({ component: Component, ...rest }) => {
   return (
-    <Route
+    <PublicRoute
       {...rest}
       render={() => {
         if (localStorage.getItem("token")) {

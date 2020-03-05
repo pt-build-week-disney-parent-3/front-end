@@ -116,7 +116,7 @@ function ParentRegisterForm(props) {
    
      const parentRegister = e => {
         e.preventDefault();
-        axiosWithAuth().post('/auth/register/parent', {...credentials, type: "parent"})
+        axiosWithAuth().post('api/auth/register/parent', {...credentials, type: "parent"})
                 .then(res => {
                     console.log(res.data)
 
@@ -239,7 +239,7 @@ function ParentRegisterForm(props) {
         <WelcomeContainer className = 'welcome'>
             <WelcomeTitle >Welcome Back!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/Signin">Sign In</SignIn>
+            <SignIn href="/Parents">Sign In</SignIn>
             
         </WelcomeContainer>
         

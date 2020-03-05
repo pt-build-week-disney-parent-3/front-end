@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import Parent from "../Components/ParentsForm";
-import Volunteer from "../Components/VolunteerForm";
-// import {reducer} from "../../reducers/reducers";
+import ParentsForm from "./ParentsLogin";
+import VolunteerForm from "./VolunteerLogin";
+
+// import {reducer} from "../reducers/reducers";
 import {connect} from "react-redux"
 import {fetchLoggedUser} from "../Actions/index"
 
@@ -18,8 +19,8 @@ const Dashboard = (props) => {
   return (
     <div>
       <div name={userType}  />
-      {userType === "parent" && <Parent />}
-      {userType === "volunteer" && <Volunteer />}
+      {userType === "parent" && <ParentsForm />}
+      {userType === "volunteer" && <VolunteerForm />}
     </div>
   );
 };

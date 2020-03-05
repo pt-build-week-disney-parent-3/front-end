@@ -15,7 +15,7 @@ export const userLogin = (credentials) => (dispatch) => {
     console.log("in login action")
         dispatch({type: LOGIN_START})
         axiosWithAuth()
-          .post("/auth/parent", credentials)
+          .post("/auth/login", credentials)
           .then(res => {
             console.log(res.data);
             localStorage.setItem("token", res.data.token);
