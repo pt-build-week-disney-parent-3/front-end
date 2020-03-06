@@ -1,12 +1,35 @@
-import React from 'react';
-import {withFormik,Form,Field,} from 'formik';
-import { Button,  FormGroup, Label} from 'reactstrap';
+import React,{ useState,useEffect} from 'react';
+import { axiosWithAuth } from '../auth/axiosWithAuth';
+
+import { Button,  FormGroup, Label,Input,Form} from 'reactstrap';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
 const SearchForm = (props)=>{
-    console.log('props from SearchForm.js',props.values)
+   const [searchTerm ,setSearchTerm] = useState('')
+   const [results ,setResults] = useState([])
+   const handleChanges = (e) => {
+     setSearchTerm(e.target.value);
+   }
+
+    useEffect(() => {
+      axiosWithAuth()
+      .get('/questions')
+      .then(response =>{
+        console.log('this is the response',response)
+      })
+      .catch(err=>{console.log('this is a error',err)})
+
+    // const results = people.filter(person =>
+    //   person.toLowerCase().includes(searchTerm)
+    // );
+    // setSearchResults(results);
+  }, [searchTerm]);
+
+
+
     return (
+    
         <div>
           <NavLink  to="/">
             <p style={{marginLeft:'2em',marginTop:'1em' }} >Home</p>
@@ -15,10 +38,12 @@ const SearchForm = (props)=>{
           <Form>
               <FormGroup>
                 <Label  style={{marginLeft:'2em' }} for="Search">Search:</Label>
-                <Field
+                <Input
                 style={{marginLeft:'2em' ,width:'60em'}}
-                  type="search"
+                  type="text"
                   name="search"
+                  value={searchTerm}
+                  onChange={handleChanges}
                   
                   placeholder="Questions"
                 />
@@ -29,11 +54,4 @@ const SearchForm = (props)=>{
       
     )
 }
-export default withFormik({
-    mapPropsToValues:()=>({
-      search:'',
-      
-    }),
-  
-  
-  }) (SearchForm);
+export default  SearchForm;
