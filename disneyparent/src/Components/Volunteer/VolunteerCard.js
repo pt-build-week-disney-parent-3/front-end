@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {axiosWithAuth} from "../../utils/axiosWithAuth";
+import {axiosWithAuth} from "../../auth/axiosWithAuth";
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux"
-import { fetchLoggedUser } from "../../actions/index";
+import { fetchLoggedUser } from "../../Actions/index";
 
 function VolunteerCard(props) {
 

@@ -119,7 +119,7 @@ function ParentsLogin(props) {
 
     e.preventDefault()
         axiosWithAuth()
-        .post('/api/auth/login/parent', object)
+        .post('api/auth/login/parent', object)
         .then(res => {
             console.log(res);
 
