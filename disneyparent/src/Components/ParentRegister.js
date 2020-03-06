@@ -116,14 +116,15 @@ function ParentRegisterForm(props) {
    
      const parentRegister = e => {
         e.preventDefault();
-        axiosWithAuth().post('api/auth/register/parent', {...credentials, type: "parent"})
-                .then(res => {
+        axiosWithAuth()
+            .post('api/auth/register/parent', {...credentials, type: "parent"})
+            .then(res => {
                     console.log(res.data)
 
                     
-                    props.history.push('/login');
+                    props.history.push('/Parent');
                 })
-                .catch(err => console.log(err));
+            .catch(err => console.log(err));
     }
 
     const registerChangeHandler = event => {

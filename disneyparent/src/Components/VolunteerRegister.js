@@ -111,7 +111,7 @@ function VolunteerRegisterForm(props) {
   const volunteerRegister = e => {
      e.preventDefault();
      axiosWithAuth()
-      .post('/api/auth/register/volunteer', {...credentials, type: "volunteer"})
+      .post('/register/contractor', {...credentials, type: "volunteer"})
       .then(res => {
                  console.log(res.data)
 
@@ -148,7 +148,7 @@ function VolunteerRegisterForm(props) {
             <InputField  
               name="password"
               type="password"
-              placeholder="Password"
+              placeholder="*******"
               value={credentials.password}
               onChange={registerChangeHandler}
             />

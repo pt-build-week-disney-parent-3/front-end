@@ -6,7 +6,7 @@ export const axiosWithAuth = () => {
     // replace with api from tiffany
 
     return axios.create({
-        baseURL: "https://disney-parent-3.herokuapp.com/",
+        baseURL: "https://disney-parent-3.herokuapp.com/api",
         headers: {
             Authorization: token
         }
