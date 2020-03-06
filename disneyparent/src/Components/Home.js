@@ -6,7 +6,7 @@ const  Home = () => {
   return (
     <div className = 'parent div'>
       <div className = 'users'>
-          <div className = 'title'> Are you a Parent or Volunteer?</div>
+        <div className = 'title'>Are you a Parent or Volunteer?</div>
 
           <Link to="/Search">
             <p>Search</p>
@@ -20,7 +20,7 @@ const  Home = () => {
       </div>
       <div className = 'registered'>Already have an Account?</div>
       <Link to ='/dashboard'></Link>
-      <Link to='/ParentsForm'>
+      <Link to='/Parents'>
 
         <p>Login</p>
       </Link>
