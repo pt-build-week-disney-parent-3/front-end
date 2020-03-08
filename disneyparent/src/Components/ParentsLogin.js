@@ -48,36 +48,6 @@ background-color: #EEEEEE;
 
 `
 
-const SignIn = styled.a`
-box-shadow: 0px 2px 0px 0px #000000;
-background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-background-color:#009DDC;
-border-radius:6px;
-border:1px solid #057fd0;
-display:inline-block;
-cursor:pointer;
-color:#2F2F2F;
-font-family:Arial;
-font-size:15px;
-font-weight:bold;
-padding:6px 24px;
-text-decoration:none;
-text-shadow:0px -1px 0px #5b6178;
-width: 100px;
-margin-left: 40%;
-
-
-&:hover {
-    background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-	background-color:#019ad2;
-}
-
-&:active {
-    position:relative;
-	top:1px;
-}
-
-`
 
 const WelcomeContainer = styled.div`
 display: flex;
@@ -124,7 +94,7 @@ function ParentsLogin(props) {
             console.log(res);
 
             localStorage.setItem('token', res.data.authToken);
-            props.history.push('/dashboard');
+            props.history.push('/Dashboard');
         })
         .catch(err => console.log(err));
 
@@ -135,7 +105,7 @@ function ParentsLogin(props) {
              <WelcomeContainer className = 'welcome'>
             <WelcomeTitle >Welcome Back!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/Parents">Sign In</SignIn>
+        
             
         </WelcomeContainer>
         <FormContainer>

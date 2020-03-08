@@ -116,7 +116,7 @@ function VolunteerRegisterForm(props) {
                  console.log(res.data)
 
                  
-                 props.history.push('/login');
+                 props.history.push('/Parents-Login');
              })
              .catch(err => console.log(err));
  }

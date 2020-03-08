@@ -39,7 +39,7 @@ const Navigation = (props) => {
                                 <NavLink href = '/Volunteer-Register/'>Volunteer Register</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href = '/Signin/'>Sign In</NavLink>
+                                <NavLink href = '/Parents-Login/'>Sign In</NavLink>
                             </NavItem>
                             <<NavItem>
                                 <NavLink onClick ={() => localStorage.clear()} href = '/LogOut'>Log Out</NavLink>
