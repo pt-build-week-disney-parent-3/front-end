@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
-import {axiosWithAuth} from '../auth/axiosWithAuth';
 import {withRouter} from 'react-router-dom';
-
+import axios from 'axios'
 
 const Container = styled.div`
 display: flex;
@@ -118,12 +117,12 @@ function VolunteerLogin(props) {
 
     const login = (e) => {
         e.preventDefault()
-        axiosWithAuth()
-            .post('/auth/login/volunteer', object)
+        axios
+            .post('https://disney-parent-3.herokuapp.com/api/auth/login/volunteer', object)
             .then(res => {
                 console.log(res);
 
-                localStorage.setItem('token, res.data.token');
+                localStorage.setItem('token, res.data.authToken');
                 props.history.push('/dashboard');
             })
             .catch(err => console.log(err));

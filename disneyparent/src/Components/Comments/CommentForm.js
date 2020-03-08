@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {axiosWithAuth} from "../auth/axiosWithAuth";
+import axios from 'axios';
 
 
 const CommentForm = (props) => {
@@ -16,7 +16,7 @@ const CommentForm = (props) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-            axiosWithAuth()
+            axios
                 .post("/comments/create", {
                     comment: comment.body, 
                     post_id: props.id,
@@ -53,4 +53,4 @@ const CommentForm = (props) => {
     )
 }
 
-export default CommentForm
+export default CommentForm;

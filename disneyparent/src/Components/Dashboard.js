@@ -1,29 +1,23 @@
 import React, {useEffect, useState} from "react";
-import Parent from '../Components/Parents/Parent';
-import Volunteer from '../Components/Volunteer/Volunteer';
 // import {reducer} from "../reducers/reducers";
 import {connect} from "react-redux"
 import {fetchLoggedUser} from "../Actions/index"
+import CommentForm from '../Components/Comments/CommentForm';
+import Comments from '../Components/Comments/Comments';
+import ChildList from './Child/ChildList';
 
-const Dashboard = (props) => {
+const Dashboard = (props)=> {
   
-  const [userType, setUserType] = useState(props.userType)
-  
-  useEffect(() => {
-    props.fetchLoggedUser();
-    console.log(props.userType);
-    setUserType(props.userType);
-  }, [props.userType]);
-
   return (
     <div>
-      <div name={userType}  />
-      {userType === "parent" && <Parent />}
-      {userType === "volunteer" && <Volunteer />}
-      
+    <h1>Welcome to your dashboard</h1>
+    <CommentForm />
+    <ChildList />
+
     </div>
-  );
-};
+  )
+
+}
 
 const mapStateToProps = state => {
   return {

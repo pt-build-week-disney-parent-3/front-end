@@ -111,7 +111,7 @@ function VolunteerRegisterForm(props) {
   const volunteerRegister = e => {
      e.preventDefault();
      axiosWithAuth()
-      .post('/register/contractor', {...credentials, type: "volunteer"})
+      .post('https://disney-parent-3.herokuapp.com/api/auth/register/contractor', credentials)
       .then(res => {
                  console.log(res.data)
 
@@ -125,9 +125,17 @@ function VolunteerRegisterForm(props) {
 
      setCredentials({
          ...credentials,
-          [event.target.name]: event.target.value 
+          [event.target.name]: !!event.target.value 
          });
  }
+
+ const handleClick = event => {
+        
+  setCredentials({
+      ...credentials,
+      [event.target.name]: !!event.target.value
+  });
+}
 
   return (
     <Container>
@@ -214,7 +222,8 @@ function VolunteerRegisterForm(props) {
                     <input  
                     name="CPR_Certified"
                     type="radio"
-                    value=""
+                    value={true}
+                    onChange = {handleClick}
                     />
                     Yes
                 </div>
@@ -222,7 +231,9 @@ function VolunteerRegisterForm(props) {
                     <input
                     name="CPR_Certified"
                     type="radio"
-                    value="no"
+                    value={null}
+                    onChange = {handleClick}
+
                     />
                     No
                 </div>

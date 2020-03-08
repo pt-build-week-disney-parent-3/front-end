@@ -31,7 +31,7 @@ export const userLogin = (credentials) => (dispatch) => {
     
         dispatch({type: FETCH_LOGGED_USER_START})
         axiosWithAuth()
-          .get("/users/logged")
+          .get("/parent")
           .then(res => {
             dispatch({ type: FETCH_LOGGED_USER_SUCCESS, payload: res.data });
           })
