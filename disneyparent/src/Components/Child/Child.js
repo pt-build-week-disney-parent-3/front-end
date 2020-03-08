@@ -41,6 +41,7 @@ const Children = (props) => {
                 newChild = {newChild}
                 setNewChild = {setNewChild}
                 edit = {editChild}
+                
             />
             <ChildList
                 child={child}

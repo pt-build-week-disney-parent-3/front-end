@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {axiosWithAuth} from "../auth/axiosWithAuth";
+import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import '../App.css'
+import {initialState} from '../reducers/reducers';
 
 
     // @import url('https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap')
@@ -110,21 +111,22 @@ margin-top: 10%;
 
 
 
+
 function ParentRegisterForm(props) {
 
   const [credentials, setCredentials] = useState({});
    
      const parentRegister = e => {
         e.preventDefault();
-        axiosWithAuth()
-            .post('api/auth/register/parent', {...credentials, type: "parent"})
+        axios
+            .post('https://disney-parent-3.herokuapp.com/api/auth/register/parent', credentials)
             .then(res => {
                     console.log(res.data)
 
                     
                     props.history.push('/Parent');
                 })
-            .catch(err => console.log(err));
+            .catch(err => console.log(err.message));
     }
 
     const registerChangeHandler = event => {
@@ -133,6 +135,14 @@ function ParentRegisterForm(props) {
             ...credentials,
              [event.target.name]: event.target.value 
             });
+    }
+
+    const handleClick = event => {
+        
+        setCredentials({
+            ...credentials,
+            [event.target.name]: !!event.target.value
+        });
     }
 
 
@@ -165,20 +175,20 @@ function ParentRegisterForm(props) {
                 <div>
                     <label>First Name</label><br/>
                     <InputField 
-                    name="firstName"
+                    name="first_name"
                     type="text"
                     placeholder="First Name"
-                    value={credentials.firstname}
+                    value={credentials.first_name}
                     onChange={registerChangeHandler}
                     />
                 </div>
                 <div>
                     <label>Last Name</label><br/>
                     <InputField 
-                    name="lastName"
+                    name="last_name"
                     type="text"
                     placeholder="Last Name"
-                    value={credentials.lastName}
+                    value={credentials.last_name}
                     onChange={registerChangeHandler}
                     />
                 </div>
@@ -195,20 +205,20 @@ function ParentRegisterForm(props) {
                 <div>
                     <label>Date of Birth</label><br/>
                     <InputField 
-                    name="DOB"
-                    type="date"
+                    name="dob"
+                    type="text"
                     placeholder="DOB"
-                    value={credentials.DOB}
+                    value={credentials.dob}
                     onChange={registerChangeHandler}
                     />
                 </div>
                 <div>
                     <label>Phone Number</label><br/>
                     <InputField 
-                    name="phonenumber"
-                    type="number"
+                    name="phone_number"
+                    type="text"
                     placeholder="123-456-7891"
-                    value={credentials.phonenumber}
+                    value={credentials.phone_number}
                     onChange={registerChangeHandler}
                     />
                 </div>
@@ -216,17 +226,19 @@ function ParentRegisterForm(props) {
             <div>
               <div>
                 <input  
-                  name="CPR_Certified"
+                  name="cpr_cert"
                   type="radio"
-                  value=""
+                  value= {true}
+                  onClick = {handleClick}
                 />
                 Yes
               </div>
               <div>
                 <input
-                  name="CPR_Certified"
+                  name="cpr_cert"
                   type="radio"
-                  value="no"
+                  value= {null}
+                  onClick = {handleClick}
                 />
                 No
               </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
-import { axiosWithAuth } from '../auth/axiosWithAuth';
+import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 
 const Container = styled.div`
@@ -118,12 +118,12 @@ function ParentsLogin(props) {
     const login = (e) => {
 
     e.preventDefault()
-        axiosWithAuth()
-        .post('api/auth/login/parent', object)
+        axios
+        .post('https://disney-parent-3.herokuapp.com/api/auth/login/parent', object)
         .then(res => {
             console.log(res);
 
-            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('token', res.data.authToken);
             props.history.push('/dashboard');
         })
         .catch(err => console.log(err));

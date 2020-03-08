@@ -12,7 +12,7 @@ const EditParent = (props) => {
         DOB: props.user.DOB,
         phoneNum: props.user.phoneNum,
         emergencyPhone: props.user.emergencyPhone,
-        type: props.user.type
+        
     });
    console.log(credentials)
     const handleSubmit = e => {

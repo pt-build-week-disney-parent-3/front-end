@@ -12,7 +12,8 @@ function ParentCard(props) {
 
     const getParent = e => {
         e.preventDefault();
-        axiosWithAuth().get("/users/logged", parent)
+        axiosWithAuth()
+        .get("/users/logged", parent)
         .then(res => {
             console.log(res.data)
             localStorage.setItem("token", res.data.token)

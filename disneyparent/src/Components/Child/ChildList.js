@@ -1,5 +1,7 @@
 import React from "react";
-import {axiosWithAuth} from "../../auth/axiosWithAuth";
+import axios from 'axios';
+
+
 
 const ChildList = (props) => {
 
@@ -7,8 +9,8 @@ const ChildList = (props) => {
   
       
     const editChild= (id) => {
-      axiosWithAuth()
-        .put(`/children/${id}` )
+      axios
+        .put(`https://disney-parent-3.herokuapp.com/api/children/parent/${id}` )
         .then(res => {
           console.log("EDIT", res.data);
           props.setNewChild({
@@ -26,8 +28,8 @@ const ChildList = (props) => {
   
     const deleteChild = (id) => {
       console.log("ID", id);
-      axiosWithAuth()
-        .delete(`/children/${id}`)
+      axios
+        .delete(`https://disney-parent-3.herokuapp.com/api/children/parent/${id}`)
         .then(res => {
           console.log("ADD", res.data);
           props.setNewGetChild(true);
@@ -38,7 +40,7 @@ const ChildList = (props) => {
 
     return (
         <div>
-            {props.child.map(item => {
+            {props.ChildList.map(item => {
                 return (
                     <div className = 'childCard' key = {item.id}>
                         <div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { axiosWithAuth } from '../auth/axiosWithAuth';
+import axios from 'axios';
 import {connect} from "react-redux"
 import CommentForm from './CommentForm';
 
@@ -16,14 +16,14 @@ const Comment = (props) => {
 
   useEffect(() => {
     setNewGetCom(false);
-    axiosWithAuth()
-      .get(`comments/comment/${props.user_id}`)
+    axios
+      .get(`https://disney-parent-3.herokuapp.com/api/comments/comment/${props.user_id}`)
       .then(res => {
         console.log("GET", res.data);
         setCom(res.data);
       })
       .catch(err => console.log(err));
-  }, [newGetChild]);
+  }, [newGetCom]);
 
 
   return (
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, {})(comment);
+export default connect(mapStateToProps, {})(Comment);
