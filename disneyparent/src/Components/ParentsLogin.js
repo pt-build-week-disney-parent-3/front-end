@@ -132,6 +132,12 @@ function ParentsLogin(props) {
 
     return (
         <Container>
+             <WelcomeContainer className = 'welcome'>
+            <WelcomeTitle >Welcome Back!</WelcomeTitle>
+            <P>Use your email to sign back in and check on your parent request!</P><br/>
+            <SignIn href="/Parents">Sign In</SignIn>
+            
+        </WelcomeContainer>
         <FormContainer>
             <Title > Parents Login</Title>
             <form onSubmit={login}>
@@ -166,12 +172,7 @@ function ParentsLogin(props) {
             </form>
         </FormContainer>
         
-        <WelcomeContainer className = 'welcome'>
-            <WelcomeTitle >Welcome Back!</WelcomeTitle>
-            <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/Parents">Sign In</SignIn>
-            
-        </WelcomeContainer>
+       
         
     </Container>
         
