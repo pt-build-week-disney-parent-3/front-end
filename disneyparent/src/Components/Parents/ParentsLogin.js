@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
-import axios from 'axios'
+import { axiosWithAuth } from '../../auth/axiosWithAuth';
+import { withRouter } from 'react-router-dom';
+import Navbar from '../Navigation/Nav';
 
 const Container = styled.div`
 display: flex;
@@ -60,7 +60,7 @@ color:#2F2F2F;
 font-family:Arial;
 font-size:15px;
 font-weight:bold;
-padding:6px 24px;
+padding:6px 15px;
 text-decoration:none;
 text-shadow:0px -1px 0px #5b6178;
 width: 100px;
@@ -78,6 +78,7 @@ margin-left: 40%;
 }
 
 `
+
 
 const WelcomeContainer = styled.div`
 display: flex;
@@ -99,46 +100,49 @@ const WelcomeTitle = styled.h1`
 margin-top: 10%;
 `
 
-function VolunteerLogin(props) {
-    const [object, setObject] = useState({
+
+
+function ParentsLogin(props) {
+
+    const [object, setObject] =useState({
         username: '',
         password: ''
-
     });
-
-   
     
 
     console.log(object)
-
     const handleChanges = (e) => {
-        setObject({...object, [e.target.name]: e.target.value})
-    }
+    setObject({...object, [e.target.name]: e.target.value})
+}
+
 
     const login = (e) => {
-        e.preventDefault()
-        axios
-            .post('https://disney-parent-3.herokuapp.com/api/auth/login/volunteer', object)
-            .then(res => {
-                console.log(res);
 
-                localStorage.setItem('token, res.data.authToken');
-                props.history.push('/dashboard');
-            })
-            .catch(err => console.log(err));
+    e.preventDefault()
+        axiosWithAuth()
+        .post('https://disney-parent-3.herokuapp.com/api/auth/login/parent', object)
+        .then(res => {
+            console.log(res);
+
+            localStorage.setItem('token', res.data.authToken);
+            props.history.push('/ParentDashboard');
+        })
+        .catch(err => console.log(err));
+
     };
 
-
     return (
+        <div>
+        <Navbar />
         <Container>
              <WelcomeContainer className = 'welcome'>
             <WelcomeTitle >Welcome Back!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/Parents">Sign In</SignIn>
+            <SignIn href = '/Volunteer-Register'>Volunteer? click here!</SignIn>
             
         </WelcomeContainer>
         <FormContainer>
-            <Title > Volunteers Login</Title>
+            <Title > Parents Login</Title>
             <form onSubmit={login}>
                 
                 <div>
@@ -155,7 +159,7 @@ function VolunteerLogin(props) {
                     <label>Password</label><br/>
                     <InputField  
                     name="password"
-                    type="password"
+                    type="text"
                     placeholder="*******"
                     value={object.password}
                     onChange={handleChanges}
@@ -174,7 +178,12 @@ function VolunteerLogin(props) {
        
         
     </Container>
-    
+</div>    
+        
     )
-  }
-  export default withRouter(VolunteerLogin);
+
+
+
+}   
+
+export default withRouter(ParentsLogin);

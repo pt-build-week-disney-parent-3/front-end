@@ -39,7 +39,7 @@ const ChildForm = (props) => {
               } else {
                 e.preventDefault();
                 axiosWithAuth()
-                  .post("/children/create", {
+                  .post("https://disney-parent-3.herokuapp.com/api/children", {
                     name: props.newChild.name,
                     DOB: props.newChild.DOB,
                     allergies: props.newChild.allergies,

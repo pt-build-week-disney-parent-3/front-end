@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const NavBar = styled.ul`
 display: flex;
 flex-direction: row;
-justify-content: flex-end;
+justify-content: center;
 align-content: space-between;
 list-style-type: none;
 width: 100%;
@@ -44,7 +44,7 @@ margin: 5px;
 }
 
 `
-const Navigation = (props) => {
+const UserNavigation = (props) => {
 
 
         return (
@@ -62,10 +62,12 @@ const Navigation = (props) => {
                     <Nav>
                          <NavItem href = '/Parents-Login/'>Sign In</NavItem>
                     </Nav>
-                    
+                    <Nav>
+                        <NavItem onClick ={() => localStorage.clear()} href = '/'>Log Out</NavItem>
+                    </Nav>
                 </NavBar>
             </div>
         )
 }
 
-export default Navigation;
+export default UserNavigation;

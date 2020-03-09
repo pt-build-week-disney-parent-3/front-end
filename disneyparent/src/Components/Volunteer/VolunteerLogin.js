@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
+import axios from 'axios'
 
 const Container = styled.div`
 display: flex;
@@ -48,6 +47,36 @@ background-color: #EEEEEE;
 
 `
 
+const SignIn = styled.a`
+box-shadow: 0px 2px 0px 0px #000000;
+background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+background-color:#009DDC;
+border-radius:6px;
+border:1px solid #057fd0;
+display:inline-block;
+cursor:pointer;
+color:#2F2F2F;
+font-family:Arial;
+font-size:15px;
+font-weight:bold;
+padding:6px 24px;
+text-decoration:none;
+text-shadow:0px -1px 0px #5b6178;
+width: 100px;
+margin-left: 40%;
+
+
+&:hover {
+    background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	background-color:#019ad2;
+}
+
+&:active {
+    position:relative;
+	top:1px;
+}
+
+`
 
 const WelcomeContainer = styled.div`
 display: flex;
@@ -69,47 +98,46 @@ const WelcomeTitle = styled.h1`
 margin-top: 10%;
 `
 
-
-
-function ParentsLogin(props) {
-
-    const [object, setObject] =useState({
+function VolunteerLogin(props) {
+    const [object, setObject] = useState({
         username: '',
         password: ''
+
     });
+
+   
     
 
     console.log(object)
-    const handleChanges = (e) => {
-    setObject({...object, [e.target.name]: e.target.value})
-}
 
+    const handleChanges = (e) => {
+        setObject({...object, [e.target.name]: e.target.value})
+    }
 
     const login = (e) => {
-
-    e.preventDefault()
+        e.preventDefault()
         axios
-        .post('https://disney-parent-3.herokuapp.com/api/auth/login/parent', object)
-        .then(res => {
-            console.log(res);
+            .post('https://disney-parent-3.herokuapp.com/api/auth/login/volunteer', object)
+            .then(res => {
+                console.log(res);
 
-            localStorage.setItem('token', res.data.authToken);
-            props.history.push('/Dashboard');
-        })
-        .catch(err => console.log(err));
-
+                localStorage.setItem('token, res.data.authToken');
+                props.history.push('/VolunteerDashboard');
+            })
+            .catch(err => console.log(err));
     };
+
 
     return (
         <Container>
              <WelcomeContainer className = 'welcome'>
             <WelcomeTitle >Welcome Back!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-        
+            <SignIn href="/Volunteer-Login">Sign In</SignIn>
             
         </WelcomeContainer>
         <FormContainer>
-            <Title > Parents Login</Title>
+            <Title > Volunteers Login</Title>
             <form onSubmit={login}>
                 
                 <div>
@@ -145,12 +173,7 @@ function ParentsLogin(props) {
        
         
     </Container>
-        
-        
+    
     )
-
-
-
-}   
-
-export default withRouter(ParentsLogin);
+  }
+  export default withRouter(VolunteerLogin);

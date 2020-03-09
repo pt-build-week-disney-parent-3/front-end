@@ -40,7 +40,7 @@ const ChildList = (props) => {
 
     return (
         <div>
-            {props.ChildList.map(item => {
+            {props.ChildForm.map(item => {
                 return (
                     <div className = 'childCard' key = {item.id}>
                         <div>
