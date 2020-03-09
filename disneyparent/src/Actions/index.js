@@ -41,6 +41,20 @@ export const userLogin = (credentials) => (dispatch) => {
           });
     }
 
+    export const fetchLoggedUserVolunteer = () => (dispatch) => {
+    
+      dispatch({type: FETCH_LOGGED_USER_START})
+      axiosWithAuth()
+        .get("/contractor")
+        .then(res => {
+          dispatch({ type: FETCH_LOGGED_USER_SUCCESS, payload: res.data });
+        })
+        .catch(err => {
+          console.log(err);
+          dispatch({ type: FETCH_LOGGED_USER_FAIL, payload: err });
+        });
+  }
+
 export const deleteMessage = (id) => dispatch => {
     console.log(`message ${id} is being deleted`)
 

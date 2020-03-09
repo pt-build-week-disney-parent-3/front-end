@@ -117,11 +117,11 @@ function VolunteerLogin(props) {
     const login = (e) => {
         e.preventDefault()
         axios
-            .post('https://disney-parent-3.herokuapp.com/api/auth/login/volunteer', object)
+            .post('https://disney-parent-3.herokuapp.com/api/auth/login/contractor', object)
             .then(res => {
                 console.log(res);
 
-                localStorage.setItem('token, res.data.authToken');
+                localStorage.setItem('token', res.data.authToken);
                 props.history.push('/VolunteerDashboard');
             })
             .catch(err => console.log(err));
