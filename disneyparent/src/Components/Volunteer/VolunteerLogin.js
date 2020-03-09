@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
+import axios from 'axios'
 
 const Container = styled.div`
 display: flex;
@@ -99,47 +98,46 @@ const WelcomeTitle = styled.h1`
 margin-top: 10%;
 `
 
-
-
-function ParentsLogin(props) {
-
-    const [object, setObject] =useState({
+function VolunteerLogin(props) {
+    const [object, setObject] = useState({
         username: '',
         password: ''
+
     });
+
+   
     
 
     console.log(object)
-    const handleChanges = (e) => {
-    setObject({...object, [e.target.name]: e.target.value})
-}
 
+    const handleChanges = (e) => {
+        setObject({...object, [e.target.name]: e.target.value})
+    }
 
     const login = (e) => {
-
-    e.preventDefault()
+        e.preventDefault()
         axios
-        .post('https://disney-parent-3.herokuapp.com/api/auth/login/parent', object)
-        .then(res => {
-            console.log(res);
+            .post('https://disney-parent-3.herokuapp.com/api/auth/login/volunteer', object)
+            .then(res => {
+                console.log(res);
 
-            localStorage.setItem('token', res.data.authToken);
-            props.history.push('/dashboard');
-        })
-        .catch(err => console.log(err));
-
+                localStorage.setItem('token, res.data.authToken');
+                props.history.push('/VolunteerDashboard');
+            })
+            .catch(err => console.log(err));
     };
+
 
     return (
         <Container>
              <WelcomeContainer className = 'welcome'>
             <WelcomeTitle >Welcome Back!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/Parents">Sign In</SignIn>
+            <SignIn href="/Volunteer-Login">Sign In</SignIn>
             
         </WelcomeContainer>
         <FormContainer>
-            <Title > Parents Login</Title>
+            <Title > Volunteers Login</Title>
             <form onSubmit={login}>
                 
                 <div>
@@ -175,12 +173,7 @@ function ParentsLogin(props) {
        
         
     </Container>
-        
-        
+    
     )
-
-
-
-}   
-
-export default withRouter(ParentsLogin);
+  }
+  export default withRouter(VolunteerLogin);

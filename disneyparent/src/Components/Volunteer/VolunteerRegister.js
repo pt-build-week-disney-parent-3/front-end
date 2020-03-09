@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {axiosWithAuth} from "../auth/axiosWithAuth";
+import axios from "axios";
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-
+import Navbar from '../Navigation/Nav';
 
 const Container = styled.div`
 display: flex;
@@ -110,13 +110,13 @@ function VolunteerRegisterForm(props) {
     
   const volunteerRegister = e => {
      e.preventDefault();
-     axiosWithAuth()
+     axios
       .post('https://disney-parent-3.herokuapp.com/api/auth/register/contractor', credentials)
       .then(res => {
                  console.log(res.data)
 
                  
-                 props.history.push('/login');
+                 props.history.push('/Volunteer-Login');
              })
              .catch(err => console.log(err));
  }
@@ -125,7 +125,7 @@ function VolunteerRegisterForm(props) {
 
      setCredentials({
          ...credentials,
-          [event.target.name]: !!event.target.value 
+          [event.target.name]: event.target.value 
          });
  }
 
@@ -138,12 +138,15 @@ function VolunteerRegisterForm(props) {
 }
 
   return (
+    <div>
+      <Navbar />
     <Container>
       <FormContainer>
-      <Title className = 'volunteer-register'>Volunteer Register Form</Title>
+      <Title className = 'volunteer-register'>Create an Account</Title>
       <form onSubmit={volunteerRegister}>
     
         <div>
+          <label>Username</label>
             <InputField 
               name="username"
               type="text"
@@ -151,8 +154,9 @@ function VolunteerRegisterForm(props) {
               value={credentials.username}
               onChange={registerChangeHandler}
             />
-        </div>
+        </div><br/>
         <div>
+          <label>Password</label>
             <InputField  
               name="password"
               type="password"
@@ -160,26 +164,29 @@ function VolunteerRegisterForm(props) {
               value={credentials.password}
               onChange={registerChangeHandler}
             />
-        </div>
+        </div><br/>
         <div>
+         <label>First Name</label>
             <InputField 
               name="firstName"
               type="text"
               placeholder="First Name"
-              value={credentials.firstName}
+              value={credentials.first_name}
               onChange={registerChangeHandler}
             />
-        </div>
+        </div><br/>
         <div>
+          <label>Last Name</label>
             <InputField 
               name="lastName"
               type="text"
               placeholder="Last Name"
-              value={credentials.lastName}
+              value={credentials.last_name}
               onChange={registerChangeHandler}
             />
-        </div>
+        </div><br/>
         <div>
+          <label>Email</label>
             <InputField 
               name="email"
               type="email"
@@ -187,34 +194,37 @@ function VolunteerRegisterForm(props) {
               value={credentials.email}
               onChange={registerChangeHandler}
             />
-        </div>
+        </div><br/>
         <div>
+          <label>Date of Birth</label>
             <InputField 
               name="DOB"
               type="date"
               placeholder="DOB"
-              value={credentials.DOB}
+              value={credentials.dob}
               onChange={registerChangeHandler}
             />
-        </div>
+        </div><br/>
         <div>
+          <label>Phone Number</label>
             <InputField 
-              name="phoneNum"
-              type="text"
-              placeholder="Phone Num."
-              value={credentials.phoneNum}
+              name="phoneNumber"
+              type="integer"
+              placeholder="123-456-7891"
+              value={credentials.phone_number}
               onChange={registerChangeHandler}
             />
-        </div>
+        </div><br/>
         <div>
+          <label>Cost per Child</label>
             <InputField 
-              name="avgPerChild"
-              type="number"
-              placeholder="Average Cost"
-              value={credentials.avgPerChild}
+              name="price"
+              type="float"
+              placeholder="ex: 20.00"
+              value={credentials.price}
               onChange={registerChangeHandler}
             />
-          </div>
+          </div><br/>
           <div>
                 <label>CPR Certified</label>
                 <div>
@@ -231,9 +241,8 @@ function VolunteerRegisterForm(props) {
                     <input
                     name="CPR_Certified"
                     type="radio"
-                    value={null}
+                    value={undefined}
                     onChange = {handleClick}
-
                     />
                     No
                 </div>
@@ -246,13 +255,14 @@ function VolunteerRegisterForm(props) {
       </FormContainer>
 
       <WelcomeContainer className = 'welcome'>
-            <WelcomeTitle >Welcome Back!</WelcomeTitle>
+            <WelcomeTitle >Welcome Volunteers!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href="/volunteer">Sign In</SignIn>
+            <SignIn href="/Parent-Register">Parent? Click here!</SignIn>
             
         </WelcomeContainer>
 
     </Container>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { axiosWithAuth } from "../../auth/axiosWithAuth";
+import axios from "axios";
 import ChildList from './ChildList';
 import ChildForm from "./ChildForm";
 import EditChild from "./EditChild";
@@ -22,8 +22,8 @@ const Children = (props) => {
   
     useEffect(() => {
       setNewGetChild(false);
-      axiosWithAuth()
-        .get(`/children/user/${props.user_id}`)
+      axios
+        .get(`https://disney-parent-3.herokuapp.com/api/children/parent/${props.user_id}`)
         .then(res => {
           console.log("GET", res.data);
           setChild(res.data);

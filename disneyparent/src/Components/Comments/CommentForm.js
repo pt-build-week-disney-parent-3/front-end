@@ -17,7 +17,7 @@ const CommentForm = (props) => {
     const handleSubmit = (e) =>{
         e.preventDefault()
             axios
-                .post("/comments/create", {
+                .post('https://disney-parent-3.herokuapp.com/api/reqcomments', {
                     comment: comment.body, 
                     post_id: props.id,
                 })

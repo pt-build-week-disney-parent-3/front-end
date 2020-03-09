@@ -17,7 +17,7 @@ const Comment = (props) => {
   useEffect(() => {
     setNewGetCom(false);
     axios
-      .get(`https://disney-parent-3.herokuapp.com/api/comments/comment/${props.user_id}`)
+      .get(`https://disney-parent-3.herokuapp.com/api/offercomments/offer/${props.user_id}`)
       .then(res => {
         console.log("GET", res.data);
         setCom(res.data);
@@ -27,14 +27,8 @@ const Comment = (props) => {
 
 
   return (
-      <div className = 'comment'>
-          <CommentForm 
-            comment = {com}
-            setNewGetCom = {setNewGetCom}
-            setEditCom = {setEditCom}
-            setNewCom = {setNewCom}
-            id = {props.id}
-        />
+      <div>
+          <CommentForm />
       </div>
   );
 };

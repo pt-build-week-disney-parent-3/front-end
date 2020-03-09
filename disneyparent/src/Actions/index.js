@@ -45,7 +45,7 @@ export const deleteMessage = (id) => dispatch => {
     console.log(`message ${id} is being deleted`)
 
     axiosWithAuth
-        .delete(`/user/message${id}`)
+        .delete(`/user/message/${id}`)
         .then(res => {
             console.log(res.data)
             dispatch({type: DELETE_MSG, payload: res.data}) //the message is deleted on the server but now we update our state to be the same as the server's
