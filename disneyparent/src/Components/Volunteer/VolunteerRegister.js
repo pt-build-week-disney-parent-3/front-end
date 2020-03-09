@@ -3,6 +3,7 @@ import axios from "axios";
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Navbar from '../Navigation/Nav';
+import '../../App.css';
 
 const Container = styled.div`
 display: flex;
@@ -118,7 +119,7 @@ function VolunteerRegisterForm(props) {
                  
                  props.history.push('/Volunteer-Login');
              })
-             .catch(err => console.log(err));
+             .catch(err => console.log(err.message));
  }
 
  const registerChangeHandler = event => {
@@ -168,7 +169,7 @@ function VolunteerRegisterForm(props) {
         <div>
          <label>First Name</label>
             <InputField 
-              name="firstName"
+              name="first_name"
               type="text"
               placeholder="First Name"
               value={credentials.first_name}
@@ -178,7 +179,7 @@ function VolunteerRegisterForm(props) {
         <div>
           <label>Last Name</label>
             <InputField 
-              name="lastName"
+              name="last_name"
               type="text"
               placeholder="Last Name"
               value={credentials.last_name}
@@ -198,7 +199,7 @@ function VolunteerRegisterForm(props) {
         <div>
           <label>Date of Birth</label>
             <InputField 
-              name="DOB"
+              name="dob"
               type="date"
               placeholder="DOB"
               value={credentials.dob}
@@ -208,7 +209,7 @@ function VolunteerRegisterForm(props) {
         <div>
           <label>Phone Number</label>
             <InputField 
-              name="phoneNumber"
+              name="phone_number"
               type="integer"
               placeholder="123-456-7891"
               value={credentials.phone_number}
@@ -230,7 +231,7 @@ function VolunteerRegisterForm(props) {
                 <div>
                 <div>
                     <input  
-                    name="CPR_Certified"
+                    name="cpr_cert"
                     type="radio"
                     value={true}
                     onChange = {handleClick}
@@ -239,7 +240,7 @@ function VolunteerRegisterForm(props) {
                 </div>
                 <div>
                     <input
-                    name="CPR_Certified"
+                    name="cpr_cert"
                     type="radio"
                     value={undefined}
                     onChange = {handleClick}
