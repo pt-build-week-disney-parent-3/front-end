@@ -90,7 +90,7 @@ const SearchForm = (props)=>{
                 </Input>
                
                   <label style = {{ width: '10%'}}for = 'Time'>Time:</label>
-                  <Input type = 'time' name = 'time' style = {{ width: '15em'}}  >
+                  <Input type = 'time' name = 'time' style = {{paddingLeft:'30px', width: '15%'}}  >
                     
                   </Input><br/>
                   <Disclaimer >*For the safety of all of our guests, meetup times must be between 7am and 9pm </Disclaimer>

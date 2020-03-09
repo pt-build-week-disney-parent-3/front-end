@@ -10,7 +10,7 @@ const ChildList = (props) => {
       
     const editChild= (id) => {
       axios
-        .put(`https://disney-parent-3.herokuapp.com/api/children/parent/${id}` )
+        .put(`https://disney-parent-3.herokuapp.com/api/children/${id}` )
         .then(res => {
           console.log("EDIT", res.data);
           props.setNewChild({
@@ -29,7 +29,7 @@ const ChildList = (props) => {
     const deleteChild = (id) => {
       console.log("ID", id);
       axios
-        .delete(`https://disney-parent-3.herokuapp.com/api/children/parent/${id}`)
+        .delete(`https://disney-parent-3.herokuapp.com/api/children/${id}`)
         .then(res => {
           console.log("ADD", res.data);
           props.setNewGetChild(true);
@@ -40,7 +40,7 @@ const ChildList = (props) => {
 
     return (
         <div>
-            {props.ChildForm.map(item => {
+            {props.child.map(item => {
                 return (
                     <div className = 'childCard' key = {item.id}>
                         <div>

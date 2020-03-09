@@ -21,6 +21,7 @@ const Dashboard = (props)=> {
       <UserNavbar />
       <SearchForm />
       <Title>Welcome to your dashboard!</Title>
+      
       <CommentForm />
       {/* <ChildList /> */}
 
