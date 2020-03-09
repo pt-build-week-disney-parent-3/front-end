@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from "axios";
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-
+import Navbar from '../Navigation/Nav';
 
 const Container = styled.div`
 display: flex;
@@ -138,6 +138,8 @@ function VolunteerRegisterForm(props) {
 }
 
   return (
+    <div>
+      <Navbar />
     <Container>
       <FormContainer>
       <Title className = 'volunteer-register'>Create an Account</Title>
@@ -187,7 +189,7 @@ function VolunteerRegisterForm(props) {
           <label>Email</label>
             <InputField 
               name="email"
-              type="text"
+              type="email"
               placeholder="Email"
               value={credentials.email}
               onChange={registerChangeHandler}
@@ -206,7 +208,7 @@ function VolunteerRegisterForm(props) {
         <div>
           <label>Phone Number</label>
             <InputField 
-              name="phoneNum"
+              name="phoneNumber"
               type="integer"
               placeholder="123-456-7891"
               value={credentials.phone_number}
@@ -241,7 +243,6 @@ function VolunteerRegisterForm(props) {
                     type="radio"
                     value={undefined}
                     onChange = {handleClick}
-
                     />
                     No
                 </div>
@@ -261,6 +262,7 @@ function VolunteerRegisterForm(props) {
         </WelcomeContainer>
 
     </Container>
+    </div>
   );
 }
 
