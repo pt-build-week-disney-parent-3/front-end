@@ -1,7 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Navbar from './Navigation/Nav';
+import styled from 'styled-components';
 
+
+const Container = styled.div`
+display
+`
 
 const  Home = () => {
   return (
