@@ -16,7 +16,7 @@ const ChildList = (props) => {
           props.setNewChild({
             id: "",
             name: res.data.name,
-            DOB: res.data.DOB, 
+            DOB: res.data.dob, 
             allergies: res.data.allergies,
             special_instructions: res.data.special_instructions,
             medical_conditions: res.data.medical_conditions

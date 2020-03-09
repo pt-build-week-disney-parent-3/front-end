@@ -4,7 +4,7 @@ import {connect} from "react-redux"
 import {fetchLoggedUser} from "../../Actions/index"
 import CommentForm from '../Comments/CommentForm';
 // import Comments from './Comments/Comments';
-// import ChildList from './Child/ChildList';
+import ChildForm from '../Child/ChildForm';
 import UserNavbar from '../Navigation/userNav';
 import SearchForm from '../SearchForm';
 import styled from 'styled-components';
@@ -21,9 +21,9 @@ const Dashboard = (props)=> {
       <UserNavbar />
       <SearchForm />
       <Title>Welcome to your dashboard!</Title>
-      
-      <CommentForm />
-      {/* <ChildList /> */}
+
+      {/* <CommentForm /> */}
+      <ChildForm />
 
     </div>
   )

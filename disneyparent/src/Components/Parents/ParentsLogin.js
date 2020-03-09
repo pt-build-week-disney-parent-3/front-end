@@ -138,7 +138,7 @@ function ParentsLogin(props) {
              <WelcomeContainer className = 'welcome'>
             <WelcomeTitle >Welcome Back!</WelcomeTitle>
             <P>Use your email to sign back in and check on your parent request!</P><br/>
-            <SignIn href = '/Volunteer-Register'>Volunteer? click here!</SignIn>
+            <SignIn href = '/Volunteer-Login'>Volunteer? click here!</SignIn>
             
         </WelcomeContainer>
         <FormContainer>

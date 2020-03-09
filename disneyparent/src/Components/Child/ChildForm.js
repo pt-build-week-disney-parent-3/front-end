@@ -17,8 +17,10 @@ const ChildForm = (props) => {
           if (props.edit) {
           e.preventDefault();
               console.log("AddChild", props);
-              axiosWithAuth().post("/children/create/", {
-                  name: props.newChild.name,
+              axiosWithAuth()
+              .post("https://disney-parent-3.herokuapp.com/api/children", {
+                  first_name: props.newChild.first_name,
+                  last_name: props.newChild.last_name,
                   DOB: props.newChild.DOB,
                   allergies: props.newChild.allergies,
                   special_instructions: props.newChild.special_instructions,
@@ -68,15 +70,24 @@ const ChildForm = (props) => {
                     <div>
                         <input
                             type="text"
-                            name="name"
-                            value={props.newChild.name}
+                            name="first_name"
+                            value={props.newChild.first_name}
                             onChange={childChangeHandler}
-                            placeholder="Name"
+                            placeholder="First Name"
                         /> 
                     </div>
                     <div>
                         <input
                             type="text"
+                            name="last_name"
+                            value={props.newChild.last_name}
+                            onChange={childChangeHandler}
+                            placeholder="Last Name"
+                        /> 
+                    </div>
+                    <div>
+                        <input
+                            type="date"
                             name="DOB"
                             value={props.newChild.DOB}
                             onChange={childChangeHandler}
@@ -86,8 +97,8 @@ const ChildForm = (props) => {
                     <div>
                         <input
                             type="text"
-                            name="Allergies"
-                            value={props.newChild.Allergies}
+                            name="allergies"
+                            value={props.newChild.allergies}
                             onChange={childChangeHandler}
                             placeholder="Allergies"
                         /> 
@@ -95,10 +106,10 @@ const ChildForm = (props) => {
                     <div>
                         <input
                             type="text"
-                            name="name"
-                            value={props.newChild.name}
+                            name="medical_conditions"
+                            value={props.newChild.medical_conditions}
                             onChange={childChangeHandler}
-                            placeholder="Name"
+                            placeholder="ex: Asthma"
                         /> 
                     </div>
                     <div>
@@ -112,11 +123,11 @@ const ChildForm = (props) => {
                     </div>
                     <div>
                         <input
-                            type="text"
-                            name="medical_conditions"
-                            value={props.newChild.medical_conditions}
+                            type="integer"
+                            name="parent_id"
+                            value={props.newChild.parent_id}
                             onChange={childChangeHandler}
-                            placeholder="Medical Conditions"
+                            placeholder="Parent ID"
                         />
                     </div>
 

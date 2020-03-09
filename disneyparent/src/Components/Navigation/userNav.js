@@ -56,12 +56,18 @@ const UserNavigation = (props) => {
                     <Nav>      
                         <NavItem href = '/Parent-Register/'>Parent Register</NavItem>
                     </Nav>
+                    {/* <Nav>      
+                        <NavItem href = '/Parent-Comments/'>Comments</NavItem>--write ternary statements for parent or volunteer
+                    </Nav> */}
                     <Nav>
                          <NavItem href = '/Volunteer-Register/'>Volunteer Register</NavItem>
                     </Nav>
-                    <Nav>
-                         <NavItem href = '/Parents-Login/'>Sign In</NavItem>
-                    </Nav>
+                    {/* <Nav>      
+                        <NavItem href = '/Parent-Questions/'>Questions</NavItem>--write ternary statements for parent or volunteer
+                    </Nav> */}
+                    {/* <Nav>      
+                        <NavItem href = '/Parent-Messages/'>Messages</NavItem>--write ternary statements for parent or volunteer
+                    </Nav> */}
                     <Nav>
                         <NavItem onClick ={() => localStorage.clear()} href = '/'>Log Out</NavItem>
                     </Nav>
